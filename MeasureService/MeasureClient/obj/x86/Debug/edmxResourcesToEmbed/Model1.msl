@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="MeasuringDBModelStoreContainer" CdmEntityContainer="MeasuringDBEntities">
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="MeasuringDBModel.Locations">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Measurements">
+      <EntityTypeMapping TypeName="MeasuringDBModel.Measurements">
+        <MappingFragment StoreEntitySet="Measurements">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeasuringStations">
+      <EntityTypeMapping TypeName="MeasuringDBModel.MeasuringStations">
+        <MappingFragment StoreEntitySet="MeasuringStations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Towns">
+      <EntityTypeMapping TypeName="MeasuringDBModel.Towns">
+        <MappingFragment StoreEntitySet="Towns">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_LocationMeasuringStation" TypeName="MeasuringDBModel.FK_LocationMeasuringStation" StoreEntitySet="MeasuringStations">
+      <EndProperty Name="Locations">
+        <ScalarProperty Name="Id" ColumnName="Location_Id" />
+      </EndProperty>
+      <EndProperty Name="MeasuringStations">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_TownLocation" TypeName="MeasuringDBModel.FK_TownLocation" StoreEntitySet="Locations">
+      <EndProperty Name="Towns">
+        <ScalarProperty Name="Id" ColumnName="Town_Id" />
+      </EndProperty>
+      <EndProperty Name="Locations">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_MeasuringStationMeasurement" TypeName="MeasuringDBModel.FK_MeasuringStationMeasurement" StoreEntitySet="Measurements">
+      <EndProperty Name="MeasuringStations">
+        <ScalarProperty Name="Id" ColumnName="MeasuringStation_Id" />
+      </EndProperty>
+      <EndProperty Name="Measurements">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
