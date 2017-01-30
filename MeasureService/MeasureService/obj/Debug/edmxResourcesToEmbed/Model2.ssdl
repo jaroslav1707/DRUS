@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MeasuringDBModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="MeasuringDBModel1StoreContainer">
+    <EntitySet Name="Locations" EntityType="MeasuringDBModel1.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Measurements" EntityType="MeasuringDBModel1.Store.Measurements" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeasuringStations" EntityType="MeasuringDBModel1.Store.MeasuringStations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Towns" EntityType="MeasuringDBModel1.Store.Towns" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_LocationMeasuringStation" Association="MeasuringDBModel1.Store.FK_LocationMeasuringStation">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="MeasuringStations" EntitySet="MeasuringStations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MeasuringStationMeasurement" Association="MeasuringDBModel1.Store.FK_MeasuringStationMeasurement">
+      <End Role="MeasuringStations" EntitySet="MeasuringStations" />
+      <End Role="Measurements" EntitySet="Measurements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TownLocation" Association="MeasuringDBModel1.Store.FK_TownLocation">
+      <End Role="Towns" EntitySet="Towns" />
+      <End Role="Locations" EntitySet="Locations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Town_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Measurements">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="float" Nullable="false" />
+    <Property Name="Time" Type="datetime" Nullable="false" />
+    <Property Name="MeasuringStation_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MeasuringStations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Towns">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_LocationMeasuringStation">
+    <End Role="Locations" Type="MeasuringDBModel1.Store.Locations" Multiplicity="1" />
+    <End Role="MeasuringStations" Type="MeasuringDBModel1.Store.MeasuringStations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MeasuringStations">
+        <PropertyRef Name="Location_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MeasuringStationMeasurement">
+    <End Role="MeasuringStations" Type="MeasuringDBModel1.Store.MeasuringStations" Multiplicity="1" />
+    <End Role="Measurements" Type="MeasuringDBModel1.Store.Measurements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MeasuringStations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Measurements">
+        <PropertyRef Name="MeasuringStation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TownLocation">
+    <End Role="Towns" Type="MeasuringDBModel1.Store.Towns" Multiplicity="1" />
+    <End Role="Locations" Type="MeasuringDBModel1.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towns">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Locations">
+        <PropertyRef Name="Town_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

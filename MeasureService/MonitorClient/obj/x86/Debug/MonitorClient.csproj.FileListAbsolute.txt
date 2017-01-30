@@ -1,0 +1,18 @@
+C:\Users\Aleksa\documents\visual studio 2010\Projects\MeasureService\MonitorClient\bin\Debug\MonitorClient.exe
+C:\Users\Aleksa\documents\visual studio 2010\Projects\MeasureService\MonitorClient\bin\Debug\MonitorClient.exe.config
+C:\Users\Aleksa\documents\visual studio 2010\Projects\MeasureService\MonitorClient\bin\Debug\MonitorClient.pdb
+C:\Users\Aleksa\documents\visual studio 2010\Projects\MeasureService\MonitorClient\obj\x86\Debug\MonitorClient.exe
+C:\Users\Aleksa\documents\visual studio 2010\Projects\MeasureService\MonitorClient\obj\x86\Debug\MonitorClient.pdb
+C:\Users\FUJITSU\Documents\Visual Studio 2010\Projects\MeasureService\MonitorClient\bin\Debug\MonitorClient.exe.config
+C:\Users\FUJITSU\Documents\Visual Studio 2010\Projects\MeasureService\MonitorClient\obj\x86\Debug\MonitorClient.exe
+C:\Users\FUJITSU\Documents\Visual Studio 2010\Projects\MeasureService\MonitorClient\obj\x86\Debug\MonitorClient.pdb
+C:\Users\FUJITSU\Documents\Visual Studio 2010\Projects\MeasureService\MonitorClient\bin\Debug\MonitorClient.exe
+C:\Users\FUJITSU\Documents\Visual Studio 2010\Projects\MeasureService\MonitorClient\bin\Debug\MonitorClient.pdb
+C:\Users\MiloS\Desktop\MeasureService\MonitorClient\bin\Debug\MonitorClient.exe.config
+C:\Users\MiloS\Desktop\MeasureService\MonitorClient\obj\x86\Debug\MonitorClient.exe
+C:\Users\MiloS\Desktop\MeasureService\MonitorClient\obj\x86\Debug\MonitorClient.pdb
+C:\Users\jaros\Desktop\MeasureService\MonitorClient\bin\Debug\MonitorClient.exe.config
+C:\Users\jaros\Desktop\MeasureService\MonitorClient\bin\Debug\MonitorClient.exe
+C:\Users\jaros\Desktop\MeasureService\MonitorClient\bin\Debug\MonitorClient.pdb
+C:\Users\jaros\Desktop\MeasureService\MonitorClient\obj\x86\Debug\MonitorClient.exe
+C:\Users\jaros\Desktop\MeasureService\MonitorClient\obj\x86\Debug\MonitorClient.pdb
